@@ -8,18 +8,18 @@ $channel = $connection->channel();
 
 // Create a fanout exchange.
 // A fanout exchange broadcasts to all known queues.
-$channel->exchange_declare('notifications', 'fanout');
+$channel->exchange_declare('updates', 'fanout');
 
 // Create and publish the message to the exchange.
-$message = new AMQPMessage(
-    json_encode(
-        array(
-            'type' => 'notification',
-            'data' => 'Train arrives in 1m30s'
-        )
+$data = array(
+    'type' => 'update',
+    'data' => array(
+        'minutes' => rand(0, 60),
+        'seconds' => rand(0, 60)
     )
 );
-$channel->basic_publish($message, 'notifications');
+$message = new AMQPMessage(json_encode($data));
+$channel->basic_publish($message, 'updates');
 
 // Close connection.
 $channel->close();
