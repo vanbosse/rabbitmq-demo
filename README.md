@@ -4,6 +4,10 @@ Clone the repository and setup a vhost to your folder.
 
 	git clone git://github.com/Vanbosse/rabbitmq-demo.git
 
+Initialize and update the submodule.
+
+	git submodule init && git submodule update
+
 Install node.js, get a copy at http://nodejs.org and install Socket.io and Rabbit.js
 
 	npm install socket.io && npm install rabbit.js
