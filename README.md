@@ -2,7 +2,7 @@
 
 Clone the repository and setup a vhost to your folder.
 
-	git clone git://github.com/Vanbosse/rabbitmq-demo.git
+	git clone git://github.com/vanbosse/rabbitmq-demo.git
 
 Initialize and update the submodule.
 
